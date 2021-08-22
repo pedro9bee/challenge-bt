@@ -1,0 +1,16 @@
+.projectTitle{
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size:12px
+}
+.buttonTodo{
+  max-width: 1.2rem;
+}
+.projectSet{
+  /* background-color: aquamarine; */
+  padding-top: 2rem;
+}
+.projectBox{
+  border-style: outset;
+  border-radius: 15px;
+  border-width: 2px;
+}

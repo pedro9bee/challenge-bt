@@ -1,0 +1,9 @@
+.menuTop{
+  /* background-color: aquamarine; */
+  padding-top: 0rem;
+}
+.projectBox{
+  border-style: outset;
+  border-radius: 15px;
+  border-width: 2px;
+}
