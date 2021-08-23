@@ -1,0 +1,80 @@
+<Center alignItems='initial' minH={500}>
+            {/* <Center w='100px'></Center> */}
+            <Square bg='whiteAlpha.200' w={margins} size='150px'>
+              <FormControl>
+                <Box mb={20} mt={10}>
+                  <Text>User Register</Text>
+                </Box>
+                <Flex direction='column'>
+                  <Text {...textProps}>Name:</Text>
+                  <InputGroup w={['200px', '200px', '400px', '200px']}>
+                    <InputLeftElement
+                      pointerEvents='none'
+                      children={<CFaUserAlt color='gray.300' />}
+                    />
+                    <Input
+                      id='userName'
+                      placeholder='Name'
+                      border={1}
+                      backgroundColor='whiteAlpha.900'
+                      boxShadow='md'
+                    ></Input>
+                  </InputGroup>
+                  <Text {...textProps}>E-mail</Text>
+                  <InputGroup w={['200px', '200px', '400px', '200px']}>
+                    <InputLeftElement
+                      pointerEvents='none'
+                      children={<CFaUserAlt color='gray.300' />}
+                    />
+                    <Input
+                      id='email'
+                      placeholder='Email'
+                      border={1}
+                      backgroundColor='whiteAlpha.900'
+                      boxShadow='md'
+                    ></Input>
+                  </InputGroup>
+                  <Text {...textProps}>Password</Text>
+                  <InputGroup w={['200px', '200px', '400px', '200px']}>
+                    <InputLeftElement
+                      pointerEvents='none'
+                      children={<CFaUserAlt color='gray.300' />}
+                    />
+                    <Input
+                      id='nome'
+                      border={1}
+                      type='password'
+                      backgroundColor='whiteAlpha.900'
+                      boxShadow='md'
+                    ></Input>
+                  </InputGroup>
+                  <Text {...textProps}>Confirm Password</Text>
+                  <InputGroup w={['200px', '200px', '400px', '200px']}>
+                    <InputLeftElement
+                      pointerEvents='none'
+                      children={<CFaUserAlt color='gray.300' />}
+                    />
+                    <Input
+                      id='confirmPassword'
+                      border={1}
+                      type='password'
+                      backgroundColor='whiteAlpha.900'
+                      boxShadow='md'
+                    ></Input>
+                  </InputGroup>
+                  <Button
+                    mt={2}
+                    bg='green.400'
+                    color='white'
+                    w='115px'
+                    _hover={{ bg: 'green.200' }}
+                    _focus={{ boxShadow: 'outline' }}
+                    type='submit'
+                  >
+                    Register User
+                  </Button>
+                </Flex>
+              </FormControl>
+            </Square>
+            {/* <Flex w='100px'></Flex> */}
+          </Center>

@@ -8,7 +8,8 @@ import { PencilIcon } from './pencilIcon'
 
 import './style.css'
 function ProjectCard(props) {
-  const { project } = props
+  const { project, deleteProject, deleteTodo } = props
+
   const todosList = project.tasks
 
   const [todos, setTodos] = useState(todosList)
@@ -17,12 +18,13 @@ function ProjectCard(props) {
     console.log(project)
   }
 
-  function deleteTodo(id) {
+  function deleteTodoLocal(project, id) {
     const newTodos = todos.filter((item) => {
       return item.id !== id
     })
     setTodos(newTodos)
     console.log(newTodos)
+    deleteTodo(project)
   }
 
   function addTodo(newTodo) {
@@ -42,7 +44,7 @@ function ProjectCard(props) {
         <VStack className='projectBox'>
           <Flex bg='#dee2e6' w='100%' p={4}>
             <Flex flex={{ base: 1, md: 'auto' }} w={'70%'}>
-              <Text className='projectTitle'>{project.nameproject}</Text>
+              <Text className='projectTitle'>{project.description}</Text>
             </Flex>
             <Stack
               id='projectAction'
@@ -59,11 +61,17 @@ function ProjectCard(props) {
               <DeleteIcon
                 color='#B4C5DC'
                 mr='2'
-                onClick={() => deleteTodo(project.id)}
+                onClick={() => deleteProject(project)}
               />
             </Stack>
           </Flex>
-          <TodoList todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} />
+          <TodoList
+            project={project._id}
+            todos={todos}
+            deleteTodoLocal={deleteTodoLocal}
+            deleteTodo={deleteTodo}
+            editTodo={editTodo}
+          />
           <AddTodo addTodo={addTodo} />
         </VStack>
       </Box>

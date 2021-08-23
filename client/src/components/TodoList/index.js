@@ -17,7 +17,7 @@ import {
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons'
 import React, { useState } from 'react'
 
-function TodoList({ todos, deleteTodo, editTodo }) {
+function TodoList({ projectid, todos, deleteTodo, editTodo }) {
   // const [todo, setTodo] = useState('')
   const [modalValue, setModalValue] = useState({})
   const [isOpen, setIsOpen] = useState(false)
@@ -45,7 +45,7 @@ function TodoList({ todos, deleteTodo, editTodo }) {
     setModalValue('')
     setIsOpen(false)
   }
-
+  console.log(todos)
   return !todos.length ? (
     <Badge colorScheme='purple' variant='outline' borderRadius='4' p='4' m='5'>
       No todos for Today!!
@@ -53,14 +53,14 @@ function TodoList({ todos, deleteTodo, editTodo }) {
   ) : (
     <VStack>
       {todos.map((todo, i) => (
-        <HStack spacing='24px' w='320px' key={i}>
+        <HStack spacing='24px' w='320px' key={projectid + '-' + i}>
           <Flex p={6} w='300px' h='50px' justifyContent='space-between'>
-            <Text color='#023e8a'>{todo.text}</Text>
+            <Text color='#023e8a'>{todo.description}</Text>
             <Flex w='10px'>
               <DeleteIcon
                 color='#B4C5DC'
                 mr='2'
-                onClick={() => deleteTodo(todo.id)}
+                onClick={() => deleteTodo(todo)}
               />
               <EditIcon color='#00B7D1' onClick={() => handleEditClick(todo)} />
             </Flex>

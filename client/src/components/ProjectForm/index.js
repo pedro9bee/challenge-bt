@@ -13,13 +13,13 @@ import { nanoid } from 'nanoid'
 import './style.css'
 import theme from '../../theme/theme'
 
-function AddProject({ addProject }) {
+function AddProject({ saveProject }) {
   const toast = useToast()
   const [value, setValue] = useState('')
 
   function handleSubmit(e) {
     e.preventDefault()
-
+    console.log('incluindo ...')
     if (value === '') {
       toast({
         title: 'Please enter the text.',
@@ -31,10 +31,10 @@ function AddProject({ addProject }) {
     }
     const project = {
       id: nanoid(),
-      text: value,
+      description: value,
     }
 
-    addProject(project)
+    saveProject(project)
     setValue('')
   }
   console.log(theme.fontSizes['6xl'])
